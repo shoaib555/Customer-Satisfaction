@@ -117,6 +117,7 @@ plot(prediction,col="Blue")
 lines(prediction,col="Blue")
 lines(actual,col="Red")
 
+#Running final model
 library(caTools)
 set.seed(12)
 spl=sample.split(h3,SplitRatio = 0.7)
@@ -128,6 +129,7 @@ summary(f)
 coef(f)
 confint(f)
 
+#Predictions
 ts$pred=predict(f,newdata=ts,type="response")
 library(Metrics)
 rmse(ts$CSAT,ts$pred)
